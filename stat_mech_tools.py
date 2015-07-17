@@ -3,6 +3,10 @@ from numpy import mean
 
 def determine_positional_probability(ordered_distances, frame_count,
                                    lower_bound, upper_bound, num_atoms):
+    '''Determine probability for a molecule to be within upper and lower
+    bounds of distance cut-offs w.r.t. the center of the solvation shell
+    of interest'''
+
     num_molecs = int(num_atoms/3)
     total_stability_probabilities = []
 
@@ -31,6 +35,8 @@ def determine_positional_probability(ordered_distances, frame_count,
     return total_stability_probabilities
 
 def stat_mech_corr_func(reactant_probs_per_cluster, product_probs_per_cluster, num_atms, num_frames):
+    '''Compute and average all possible positional probability time-correlation-functions'''
+   
     num_molecs=int(num_atms/3)
 
     cluster_correlations = []

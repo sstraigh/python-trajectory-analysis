@@ -1,4 +1,7 @@
 def order_distances(traj, num_atms, box_width, num_frames):
+    '''Takes 1d traj[] (atom locations per frame) and
+    computes the 3d ordered_distances[frame][cluster_center][cluster_member] = 
+    float(distance between cluster center and member)'''
 
     ordered_distances_per_frame_per_molec = []
 

@@ -1,8 +1,18 @@
 def grouper(n, iterable):
+    '''groupes a data structure in subsections of length n
+
+    '''
+
     args = [iter(iterable)] * n
     return zip(*args)
 
 def read_trajectory(trajectory_file):
+    '''reads POSITION_CMD-type format
+
+    returns an array of data[frame_no*frame_length + index] = 
+    position of atom at index (in tuple form) at frame_no''' 
+
+
     frame_coordinates = []
     filename = open(trajectory_file, 'r')
     first_line = filename.readline()
